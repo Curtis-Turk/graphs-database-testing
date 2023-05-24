@@ -5,6 +5,7 @@ import { CategoryScale } from "chart.js";
 import { useState } from "react";
 import { UserData } from "@/utils/userData";
 import PieChart from "./PieChart";
+import BarChart from "./BarChart";
 
 type UserDataObject = {
   id: number;
@@ -14,6 +15,17 @@ type UserDataObject = {
 };
 
 type UserDataObjects = UserDataObject[];
+
+export type ChartData = {
+  labels: number[];
+  datasets: {
+    label: string;
+    data: number[];
+    backgroundColor: string[];
+    borderColor: string;
+    borderWidth: number;
+  }[];
+};
 
 export default function ChartJS() {
   Chart.register(CategoryScale);
@@ -40,7 +52,10 @@ export default function ChartJS() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <h1>Chart.js</h1>
-      <PieChart chartData={chartData} />
+      <div className="flex flex-row">
+        <PieChart chartData={chartData} />
+        <BarChart chartData={chartData} />
+      </div>
     </main>
   );
 }

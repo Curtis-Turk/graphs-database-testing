@@ -1,15 +1,5 @@
 import { Pie } from "react-chartjs-2";
-
-type ChartData = {
-  labels: number[];
-  datasets: {
-    label: string;
-    data: number[];
-    backgroundColor: string[];
-    borderColor: string;
-    borderWidth: number;
-  }[];
-};
+import { ChartData } from "./page";
 
 function PieChart({ chartData }: { chartData: ChartData }) {
   return (
