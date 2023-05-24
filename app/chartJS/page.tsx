@@ -6,6 +6,7 @@ import { useState } from "react";
 import { UserData } from "@/utils/userData";
 import PieChart from "./PieChart";
 import BarChart from "./BarChart";
+import LineChart from "./LineChart";
 
 type UserDataObject = {
   id: number;
@@ -50,11 +51,12 @@ export default function ChartJS() {
   });
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center p-40">
       <h1>Chart.js</h1>
-      <div className="flex flex-row">
+      <div className="flex flex-row p-32">
         <PieChart chartData={chartData} />
         <BarChart chartData={chartData} />
+        <LineChart chartData={chartData} />
       </div>
     </main>
   );
