@@ -2,7 +2,7 @@
 
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
-import { useState } from "react";
+// import { useState } from "react";
 import { UserData } from "@/utils/userData";
 import PieChart from "./PieChart";
 import BarChart from "./BarChart";
@@ -31,7 +31,8 @@ export type ChartData = {
 export default function ChartJS() {
   Chart.register(CategoryScale);
 
-  const [chartData, setChartData] = useState({
+  // const [chartData, setChartData] = useState(
+  const chartData = {
     labels: UserData.map((data) => data.year),
     datasets: [
       {
@@ -48,10 +49,11 @@ export default function ChartJS() {
         borderWidth: 2,
       },
     ],
-  });
+  };
+  // );
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-40">
+    <main className="flex min-h-screen flex-col items-center mt-3 p-10">
       <h1>Chart.js</h1>
       <div className="flex flex-row p-32">
         <PieChart chartData={chartData} />
