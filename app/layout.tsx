@@ -1,6 +1,6 @@
+import Nav from "@/components/Nav";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Link href="/" className="flex items-center text-center">
-          Home
-        </Link>
+        <Nav />
         {children}
       </body>
     </html>
