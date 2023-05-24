@@ -1,4 +1,4 @@
-const pageData = [
+export const pageData = [
   {
     name: "Page A",
     uv: 4000,
